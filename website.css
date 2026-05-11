@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(674118729_985943440558417_940946126249635840_n.jpg)
+    background-color: rgba(223, 222, 222, 0.7);
+    background-blend-mode: multiply;
+    background-size: cover;      
+    background-position: center;  
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#app {
+    display: none;
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
+    min-height: 100vh;
+    box-shadow:none;
+}
+
+header {
+    background: rgba(173, 216, 230, 0.7) !important;
+    backdrop-filter: blur(15px); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card, .product {
+    background: rgba(255, 255, 255, 0.75) !important;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+nav button {
+    margin: 4px;
+    background: #334155;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.product {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #334155;/* Slate Gray */
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    background: #b6b9b6;
+}
+
+.product:hover {
+    transform: translateY(-5px); /* Tatalon ng konti pataas */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#auth .card {
+    width: 320px;
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(10px);      
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.page { display: none; padding: 20px; animation: fadeIn 0.5s;}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.active { display: block; }
+.msg { background: #ddd; margin: 5px 0; padding: 8px; border-radius: 6px; }
+.badge { background: #ef4444; color: #fff; padding: 2px 6px; border-radius: 10px; font-size: 12px; margin-left: 5px; }
+
+#chatBox {
+    height: 300px;
+    overflow-y: auto;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* I-target ang About at Help pages specifically */
+#about, #help {
+    line-height: 1.6; /* Mas malawak na pagitan ng lines para madaling basahin */
+    color: var(--text-color);
+}
+
+/* Style para sa mga Main Titles (H2) */
+#about h2, #help h2 {
+    color: #4e4c59; /* Indigo color */
+    font-size: 28px;
+    border-bottom: 2px solid #add8e6; /* Manipis na linya sa ilalim */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Style para sa mga Sub-titles (H3) */
+#about h3, #help h3 {
+    color: #636178; /* Navy Blue */
+    margin-top: 25px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#about ul, #help ul {
+    list-style: none; /* Alisin ang default dots */
+    padding-left: 0;
+}
+
+#about li, #help li {
+    background: rgba(255, 255, 255, 0.4);
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #9c94f5; /* Kulay na guhit sa gilid */
+    transition: 0.3s;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+#about li:hover, #help li:hover {
+    transform: translateX(10px); /* Gagalaw pakanan pag tinapatan ng mouse */
+    background: rgba(223, 221, 221, 0.5);
+}
+
+/* Gamitin ang class na 'sos' o 'card' na nasa loob ng help/about */
+#about .card, #help .sos {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left; /* Siguraduhing pantay sa kaliwa */
+}
